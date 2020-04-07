@@ -10,3 +10,6 @@
 2. you type the games you made
 
 3. the program will calculate the number of hits and you can do as many times as you want with the same game
+
+## How to run: 
+1. python3 
