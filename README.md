@@ -12,4 +12,4 @@
 3. the program will calculate the number of hits and you can do as many times as you want with the same game
 
 ## How to run: 
-1. python3 loto.py
+1. python3 lote.py
