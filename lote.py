@@ -20,13 +20,16 @@ def saber(listanum):
 def imprimir_jogo(tabnum):
     matriz = [] #lista vazia
     n = 0
-    for i in range(5):
-        #cria a linha i
-        linha = []
-        for j in range(3):
-            linha.append(tabnum[n])
-            n += 1
-        matriz.append(linha)
+    if len(tabnum) >= 15:
+        for i in range(5):
+            #cria a linha i
+            linha = []
+            for j in range(3):
+                linha.append(tabnum[n])
+                n += 1
+            matriz.append(linha)
+    else:
+        tabnum = matriz
     return matriz
 
 def gerador_aleatorio():
@@ -44,26 +47,29 @@ def gerador_aleatorio():
 print('------------------- JOGO OFICIAL -------------------')
 print('A seguir, digite o jogo oficial que será comparado\ncom os jogos que você fez')
 print('----------------------------------------------------')
-# testA = gerador_aleatorio()
+testA = gerador_aleatorio()
 
 
-# print( 'Teste aleatorio : ', testA)
+print( 'Teste aleatorio : ', testA)
 numeros = adicionar()
 while True:
     teste = saber(numeros)
     tabela = imprimir_jogo(numeros)
     #printar tabela
     print(f'Sequência original: ')
-    for i in range(5):
-        for j in range(3):
-            print(f'   {tabela[i][j]}   ', end='')
-        print('\n')
-    print('=-='*15)
+    if len(tabela) >= 15:
+        for i in range(5):
+            for j in range(3):
+                print(f'{tabela[i][j]}   ')
+            print('\n')
+        print('=-='*15)
+    else:print(f'   {numeros}   ', end='\n')
+
 
     print(f'ACERTOS     : {len(teste)}')
-    print(f'Sequencia de acertos     : {teste}')
+    print(f'Sequencia de acertos : {teste}')
     print('=-='*15)
     cond = str(input('Deseja verificar outro jogo? s / n : '))
+    print('---'*15)
     if cond == 'n':
         break
-    
